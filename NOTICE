@@ -1,0 +1,42 @@
+   Copyright 2020 Kyehwan Lee at NIST
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ 
+
+
+   Following is the list of modification or newly added by the owner for 
+   applying to NIST SRx Suite for BGPSec operation
+
+    api/attribute.pb.go               
+    api/attribute.proto               
+    api/capability.pb.go              
+    api/gobgp.pb.go                   
+    api/gobgp.proto                   
+    cmd/gobgp/common.go               
+    cmd/gobgp/global.go               
+    cmd/gobgp/neighbor.go             
+    internal/pkg/apiutil/attribute.go 
+    internal/pkg/config/bgp_configs.go
+    internal/pkg/config/util.go       
+    internal/pkg/table/destination.go 
+    internal/pkg/table/message.go     
+    internal/pkg/table/path.go        
+    internal/pkg/table/policy.go      
+    internal/pkg/table/roa.go         
+    pkg/packet/bgp/bgp.go             
+    pkg/packet/bgp/validate.go        
+    pkg/server/bgpsec.go              
+    pkg/server/fsm.go                 
+    pkg/server/grpc_server.go         
+    pkg/server/peer.go                
+    pkg/server/server.go              
