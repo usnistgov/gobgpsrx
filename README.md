@@ -2,6 +2,8 @@
 # NIST GoBGPsec 
 GoBGPsec uses NIST SRxCrypto library to facilitate crypto calculations
 which is able to sign and verify X.509 objects for BGPSec path validation. 
+This software is based on [Gobgp](https://github.com/osrg/gobgp) BGP implementation and added codes for 
+implementing BGPSec protocol ([RFC 8205](https://tools.ietf.org/html/rfc8205)).
 
 
 ## Project Status
@@ -20,10 +22,10 @@ You need a working Go Environment
 
 
 ### Prerequisites
-
-Need to install SRxCryptoAPI library first. GoBGPsec requires to use this crypto library
-for signing and validation when the BGPSec operation starts. <br>
-Need SRxCryptoAPI library >= v3.0
+GoBGPsec requires to use this crypto library for signing and validation 
+when the BGPSec operation starts.
+* Need to install SRxCryptoAPI library first
+* Need SRxCryptoAPI library >= v3.0
 
 Download NIST SRx software from the link below. 
 ```bash
@@ -41,6 +43,8 @@ following command.
 cd srx-crypto-api
 ./configure --prefix=<Dir/to/install> CFLAGS="-O0 -g"
 ```
+For more information such as key generation for signing and etc,
+please refer to [NIST SRxCryptoAPI](https://github.com/usnistgov/NIST-BGP-SRx/tree/master/srx-crypto-api) page.
 
 
 ### Build 
@@ -73,11 +77,11 @@ go install ./...
 
 
 ### BGPSec Configuration
- [GoBGPSec Configuration](docs/sources/bgpsec.md)
+ [GoBGPsec Configuration](docs/sources/bgpsec.md)
 </br></br>
 
 ### Quick Functional Test / Demo
-gobgpd server
+#### gobgpd server
 ```bash
 # gobgpd -p -f /etc/gobgpd.conf --log-level=debug
 INFO[0000] gobgpd started                               
@@ -162,7 +166,7 @@ DEBU[0035] sb_value: []bgp.SignatureBlockInterface{(*bgp.SignatureBlock)(0xc0003
 DEBU[0035] sent update                                   Key=172.37.0.2 State=BGP_FSM_ESTABLISHED Topic=Peer attributes="[{Origin: i} {bgpsecs} {MpReach(ipv4-unicast): {Nexthop: 172.37.0.3, NLRIs: [200.0.0.0/8]}}]" nlri="[]" withdrawals="[]"
 ```
 
-gobgp client
+#### gobgp client
 ```bash
 # gobgp global rib
 Network              Next Hop             AS_PATH              Age        Attrs                                                    
