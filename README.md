@@ -5,6 +5,8 @@ which is able to sign and verify X.509 objects for BGPSec path validation.
 This software is based on [Gobgp](https://github.com/osrg/gobgp) BGP implementation and added codes for 
 implementing BGPSec protocol ([RFC 8205](https://tools.ietf.org/html/rfc8205)).
 
+This work is part of the larger [NIST Robust Inter Domain Routing Project](https://www.nist.gov/programs-projects/robust-inter-domain-routing) that addresses a wide range of security and resilience issues in the Internet’s routing infrastructure. The software in this repository is a component of a larger [suite of software tools](https://www.nist.gov/services-resources/software/bgp-secure-routing-extension-bgp-srx-software-suite) developed within the project.
+
 
 ## Project Status
 
