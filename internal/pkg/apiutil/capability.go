@@ -117,6 +117,10 @@ func NewUnknownCapability(a *bgp.CapUnknown) *api.UnknownCapability {
 	}
 }
 
+func NewBGPCapability(a *bgp.CapBGPSecCapability) *api.BgpsecAttribute {
+	return &api.BgpsecAttribute{}
+}
+
 func MarshalCapability(value bgp.ParameterCapabilityInterface) (*any.Any, error) {
 	var m proto.Message
 	switch n := value.(type) {
@@ -142,6 +146,8 @@ func MarshalCapability(value bgp.ParameterCapabilityInterface) (*any.Any, error)
 		m = NewRouteRefreshCiscoCapability(n)
 	case *bgp.CapUnknown:
 		m = NewUnknownCapability(n)
+	case *bgp.CapBGPSecCapability:
+		m = NewBGPCapability(n)
 	default:
 		return nil, fmt.Errorf("invalid capability type to marshal: %+v", value)
 	}
