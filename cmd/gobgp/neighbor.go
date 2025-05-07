@@ -500,11 +500,11 @@ func getPathSymbolString(p *api.Path, idx int, showBest bool) string {
 	}
 	vsec := p.BgpsecValidation
 	switch vsec {
-	case 2:
+	case api.Validation_STATE_VALID:
 		symbols += ",V"
-	case 1:
+	case api.Validation_STATE_INVALID:
 		symbols += ",I"
-	case 0:
+	case api.Validation_STATE_NOT_FOUND:
 		symbols += ",N"
 	default:
 		symbols += ",N"
